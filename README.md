@@ -11,5 +11,3 @@
 
 3. Build application in Python Flask API.
     * First Set up Twilio account and test it.
-
-

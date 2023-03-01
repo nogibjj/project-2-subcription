@@ -16,25 +16,39 @@ def add_cli(a, b):
 # test
 
 
-from flask import Flask
-
-# ,  request
+from flask import Flask, request, render_template
 from twilio.rest import Client
-from twilioInfo import accountSid, authToken, myTwilioNumber, myPhoneNumber
+from twilioInfo import (
+    accountSid,
+    authToken,
+    myTwilioNumber,
+    myPhoneNumber,
+    messagingServiceSid,
+)
 
 app = Flask(__name__)
 
 client = Client(accountSid, authToken)
 
 
-@app.route("/send-sms/<message>", methods=["GET"])
-def send_sms(message):
+@app.route("/add-a-subscription", methods=["GET", "POST"])
+def new():
     # to = request.form.get('to')
-    # message = request.form.get('message')
-    messageContent = message
-    client.messages.create(to=myPhoneNumber, from_=myTwilioNumber, body=messageContent)
 
-    return "Message sent!"
+    if request.method == "POST":
+        item = request.form.get("item")
+        date = request.form.get("date")
+        message = "You start a subscription " + item + " on " + date + "."
+        client.messages.create(
+            messaging_service_sid=messagingServiceSid,
+            to=myPhoneNumber,
+            from_=myTwilioNumber,
+            body=message,
+        )
+    else:
+        message = "Please enter the item and date."
+
+    return render_template("subscription.html", message=message)
 
 
 @app.route("/")

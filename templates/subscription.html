@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- the full dict for a president is sent here as pres by the route -->
+
+<div class="topnav">
+
+  <h2> hey hey hey</h2>
+   <center class="row">
+   <div class="search-container">
+    <form method="post">
+      <input type="text" placeholder="Subscription" name="item">
+      <input type="text" placeholder="Date" name="date">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  </center>
+</div>
+
+
+<div>
+    <!-- <img class="right" src={{ imageSrc }} alt="Sunset portrait" width = '200px' height = 'auto'>-->
+
+<ul>
+    <li> Message: {{messege}} </li>
+</ul>
+
+</div>
+
+
+    
+
+
+
+
+
+{% endblock %}

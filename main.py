@@ -14,9 +14,27 @@ def add_cli(a, b):
 
 
 # test
+
+
 from flask import Flask
 
+# ,  request
+from twilio.rest import Client
+from twilioInfo import accountSid, authToken, myTwilioNumber, myPhoneNumber
+
 app = Flask(__name__)
+
+client = Client(accountSid, authToken)
+
+
+@app.route("/send-sms/<message>", methods=["GET"])
+def send_sms(message):
+    # to = request.form.get('to')
+    # message = request.form.get('message')
+    messageContent = message
+    client.messages.create(to=myPhoneNumber, from_=myTwilioNumber, body=messageContent)
+
+    return "Message sent!"
 
 
 @app.route("/")

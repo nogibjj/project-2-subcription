@@ -11,3 +11,4 @@ uvicorn==0.18.3
 Flask==2.1.0
 requests==2.25.1
 locust==1.4.3
+twilio==6.55.0

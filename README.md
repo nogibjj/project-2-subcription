@@ -1,25 +1,15 @@
 [![CI](https://github.com/nogibjj/python-template/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/python-template/actions/workflows/cicd.yml)
-## Template for Python projects 
+# Project 2: Kubernetes based Continuous Delivery - Subscription Manager
 
-1. First thing to do on launch is to open a new shell and verify virtualenv is sourced.
+## Steps
 
-Things included are:
+1. Set up the virtual environment
 
-* `Makefile`
+* `python3 -m venv env`
+* `source env/bin/activate`
 
-* `Pytest`
+2. Set up the database
 
-* `pandas`
+3. Build application in Python Flask API.
 
-* `Pylint`
-
-* `Dockerfile`
-
-* `GitHub copilot`
-
-* `jupyter` and `ipython` 
-
-* A base set of libraries for devops and web
-
-* `githubactions` 
 

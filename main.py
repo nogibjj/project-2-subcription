@@ -54,22 +54,6 @@ class subscription:
 
 SubscriptionDB = []
 
-
-from apscheduler.schedulers.blocking import BlockingScheduler
-
-
-def CallApiToCheck():
-    response = requests.get("https://127.0.0.1.com/check", timeout=10)
-    if response.status_code == 200:
-        print("API called successfully")
-    else:
-        print("API call failed with status code:", response.status_code)
-
-
-scheduler = BlockingScheduler()
-scheduler.add_job(CallApiToCheck, "cron", hour=0)
-scheduler.start()
-
 app = Flask(__name__)
 
 
@@ -166,6 +150,20 @@ def home():
     #     # return render_template(('hello.html', name = name))
     return "Welcome to the Subscription Manager!"
 
+
+# from apscheduler.schedulers.blocking import BlockingScheduler
+
+# def CallApiToCheck():
+#     response = requests.get("/check", timeout=5)
+#     if response.status_code == 200:
+#         print("API called successfully")
+#     else:
+#         print("API call failed with status code:", response.status_code)
+
+
+# scheduler = BlockingScheduler()
+# scheduler.add_job(CallApiToCheck, "cron", hour=0)
+# scheduler.start()
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8080, debug=True)

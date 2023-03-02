@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- the full dict for a president is sent here as pres by the route -->
+
+<div class="topnav">
+
+  <h2> Inactivate a Subscription</h2>
+   <center class="row">
+   <div class="search-container">
+    <form method="post">
+      <input type="text" placeholder="Subscription" name="item">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  </center>
+</div>
+
+
+<div>
+<h2> Message: </h2> 
+{{message}} 
+</div>
+
+
+    
+
+
+
+
+
+{% endblock %}

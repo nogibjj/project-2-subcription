@@ -1,8 +1,3 @@
-"""
-Test goes here
-
-"""
-
 from mylib.calculator import add
 
 

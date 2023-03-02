@@ -6,33 +6,25 @@
 
 <div class="topnav">
 
-  <h2> hey hey hey</h2>
+  <h2>Add a Subscription</h2>
    <center class="row">
    <div class="search-container">
     <form method="post">
       <input type="text" placeholder="Subscription" name="item">
       <input type="text" placeholder="Date" name="date">
+      <input type="text" placeholder="Monthly Payment Amount" name="paymentAmount">
+      <input type="text" placeholder="Payment Method" name="paymentMethod">
       <button type="submit">Submit</button>
     </form>
   </div>
   </center>
 </div>
 
-
 <div>
-    <!-- <img class="right" src={{ imageSrc }} alt="Sunset portrait" width = '200px' height = 'auto'>-->
-
-<ul>
-    <li> Message: {{messege}} </li>
-</ul>
-
+    <h2> Message:</h2> 
+    {{message}} 
 </div>
 
 
-    
-
-
-
-
-
+  
 {% endblock %}

@@ -1,15 +1,14 @@
 from mylib.calculator import add
 
-
 def add_cli(a, b):
     add(a, b)
-
 
 # my program
 from flask import Flask, request, render_template
 import datetime
 from dateutil.relativedelta import relativedelta
-import requests
+
+# import requests
 from twilio.rest import Client
 from twilioInfo import (
     accountSid,
@@ -21,7 +20,6 @@ from twilioInfo import (
 
 client = Client(accountSid, authToken)
 
-
 def callTwilio(message):
     client.messages.create(
         messaging_service_sid=messagingServiceSid,
@@ -29,7 +27,6 @@ def callTwilio(message):
         from_=myTwilioNumber,
         body=message,
     )
-
 
 class subscription:
     def __init__(
@@ -51,11 +48,9 @@ class subscription:
     def todayIsDue(self, tomoorrow):
         return self.nextPaymentDate == tomoorrow
 
-
 SubscriptionDB = []
 
 app = Flask(__name__)
-
 
 @app.route("/add", methods=["GET", "POST"])
 def new():
@@ -84,6 +79,8 @@ def new():
 
         message = f"You add a new subscription {item} on {orderDate}, you paid {paymentAmount} \
                     by {paymentMethod} and your next payment date is {nextPaymentDate}."
+        
+        print(SubscriptionDB)
 
         # twilio api to inform user of new subscription
         # callTwilio(message)

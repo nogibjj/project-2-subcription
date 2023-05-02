@@ -1,0 +1,5 @@
+accountSid = "AC3d3d39d8a855cb1571901cc987e0e4e5"
+authToken = "5f925570b8a8966b3c39cf24a13b3859"
+myTwilioNumber = "+18555220866"
+myPhoneNumber = "+19843129097"
+messagingServiceSid = "MGa38c99d6b1958069911c05ebcf580d48"

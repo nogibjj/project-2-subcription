@@ -63,15 +63,37 @@ A. Containerized with Docker and Deployed with AWS ECR and Apprunner.
    
    7. Demos
    Homepage
-   ![Homepage](https://user-images.githubusercontent.com/68854273/235838816-b070825c-85e5-44ac-b3d9-bf81eba07419.png)
+   ![Homepage](https://user-images.githubusercontcreate deployment and view it
+    kubectl create deployment hi-minikube --image=registry.hub.docker.com/sasays/randfood
+    kubectl get deploymentsent.com/68854273/235838816-b070825c-85e5-44ac-b3d9-bf81eba07419.png)
    Add a subscription
    ![Add](https://user-images.githubusercontent.com/68854273/235838852-e23b46d7-6cf9-473b-a3de-0ab41dbca81f.png)
    Delete a subscription
    ![Inactivate](https://user-images.githubusercontent.com/68854273/235838881-e8bcd9e8-ffd7-4449-bd28-08633f5a8d1b.png)
 
+B. Minikube
+   1. Login to Docker Hub. Build and push:
+   ```
+   docker login --username=<your-dockerhub-username>
+   docker build . -t <your-dockerhub-username>/<your-application-name>
+   docker push <your-dockerhub-username>/<your-application-name>
+   ```
+   2. `minikube start`
+   3. Run `minikube dashboard --url` to view dashboard
+   4. create deployment and view it
+   ```
+   kubectl create deployment sub --image=registry.hub.docker.com/zhuminghui17/sub
+   kubectl get deployments
+   ```
+   5. deploy microserver and expose it
+   ```
+   kubectl expose deployment sub --type=LoadBalancer --port=8080
+   kubectl get service sub
+   minikube service sub  --url
+   ```
+   6. we can get `http://127.0.0.1:51757` url.
+   ![img](https://user-images.githubusercontent.com/68854273/235875844-2bfc0192-f8a9-4938-a7c0-8dd4fd49b3d0.png)
    
-   
-   
-   
+
    
 

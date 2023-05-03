@@ -16,20 +16,6 @@ Do you hate that your subscription auto-renewed but you can do nothing because y
 * Deployment should be to some form of Kubernetes service (can be hosted like Google Cloud Run or Amazon EKS, etc)
 
 
-
-
-
-## Steps
-
-1. Set up the virtual environment
-    * `python3 -m venv env`
-    * `source env/bin/activate`
-
-2. Set up the database
-
-3. Build application in Python Flask API.
-    * First Set up Twilio account and test it.
-
 ## Automatic Deployment
 A. Containerized with Docker and Deployed with AWS ECR and Apprunner.
 

@@ -1,6 +1,8 @@
 [![CI](https://github.com/nogibjj/python-template/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/python-template/actions/workflows/cicd.yml)
 # Project 2: Kubernetes based Continuous Delivery - Subscription Manager
 
+Via Apprunner: https://d44eqbhn5b.us-east-1.awsapprunner.com/
+
 This repository contains the code for a subscription service that allows users to subscribe to various services and manage their subscriptions. The project uses Python language and is built and tested using Minikube.
 
 ## Intro
